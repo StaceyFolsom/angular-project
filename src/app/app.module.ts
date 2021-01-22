@@ -3,14 +3,18 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RecipeComponent } from './recipe/recipe.component';
-import { ListComponent } from './list/list.component';
+import { RecipeListComponent } from './recipe-list/recipe-list.component';
+import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
+import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
+import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RecipeComponent,
-    ListComponent
+    RecipeListComponent,
+    SearchCriteriaComponent,
+    FavoritesPageComponent,
+    RecipeDetailsComponent
   ],
   imports: [
     BrowserModule,
