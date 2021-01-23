@@ -24,14 +24,7 @@ export class RecipeService {
     this.http.get(requestURL).subscribe(
       (response: any) => {
         this.recipes = response.hits;
-      
-        // STACEY BELOW
-        for (let key in response) {
-          if (Object.prototype.hasOwnProperty.call(response, key)) {
-            const shortRecipe = response[key];
-            this.recipes.push(shortRecipe);}
-          }console.log(this.recipes);
-        // let recipes = response.hits.children;
+        console.log(this.recipes); // STACEY won't be needed in the long run
         
       },
       (error) => {
@@ -40,7 +33,7 @@ export class RecipeService {
     );
   }
 
-  getUrlWithAPIKey() {
+  getUrlWithAPIKey() { // DON'T CHANGE ME
     return `${this.url}?app_id=${this.appID}&app_key=${this.apiKey}`;
   }
 
