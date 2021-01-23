@@ -1,15 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { RecipeService } from '../recipe.service' // STACEY
 
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
-  styleUrls: ['./recipe-list.component.css']
+  styleUrls: ['./recipe-list.component.css'],
+  providers: [RecipeService] // STACEY
 })
 export class RecipeListComponent implements OnInit {
 
-  constructor() { }
+  constructor( public recipeService: RecipeService) { } // STACEY
 
   ngOnInit(): void {
+    this.recipeService.getRecipes(); // STACEY
   }
 
 }
