@@ -15,12 +15,16 @@ export class RecipeService {
   appID = "780ebef6";
   url = "https://api.edamam.com/search";
   recipes: shortRecipe[] = [];
+  // searchTerm : string = "";
 
   constructor(private http: HttpClient) {}
 
-  getRecipes() {
-    const requestURL = this.getUrlWithAPIKey() + "&q=tacos"; // add whatever params you want from https://developer.edamam.com/edamam-docs-recipe-api
-  
+
+
+  getRecipes(searchTerm) {
+    const requestURL = this.getUrlWithAPIKey() + "&q=" + searchTerm; // add whatever params you want from https://developer.edamam.com/edamam-docs-recipe-api
+  console.log("Searching for:", searchTerm);
+
     this.http.get(requestURL).subscribe(
       (response: any) => {
         this.recipes = response.hits;

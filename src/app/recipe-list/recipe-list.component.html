@@ -1,34 +1,12 @@
-<h1>Front End Foodies</h1>
-<header>
-<nav>
-    <ul>
-    <li> <a class= "nav1" href="/Home/">Home</a> </li> <br>
-    <li> <a class= "nav1" href="/Recipes/">Recipes</a> </li> <br>
-    <li> <a class= "nav1" href="/My Favorites/">My Favorites</a> </li> <br>
-    </ul>
-</nav>
-</header>
-
 <body>
       
-      <div class="wrap">
-        <div class="search">
-           <input type="text" class="searchTerm" placeholder="Search over 1M recipes">
-           <button type="submit" class="searchButton">
-             <i class="fa fa-search"></i>
-          </button>
-        </div>
-     </div>
 
-    <div>
+
+    <!-- <div>
         <input class="filter" type="text" name="filter" [(ngModel)]="filter" placeholder="Filter recipes"/> 
-    </div>
+    </div> -->
 
-    <div class="circles">
-        <div id="circle-1"></div> 
-        <div id="circle-2"></div>
-        <div id="circle-3"></div>
-    </div>
+
 
     <div class="recipes" *ngFor="let recipe of recipeService.recipes">
     <h2> {{ recipe.recipe.label }}</h2>
