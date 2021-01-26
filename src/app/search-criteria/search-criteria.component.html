@@ -1,1 +1,21 @@
-<p>search-criteria works!</p>
+<!-- <div>
+    <form>
+    <input class="textSearch" name="searchTerm" [(ngModel)]="text" type="text" placeholder="Favorite Ingredient" />
+  </form>
+  <button class="search" (click)="searchRecipes(i)">Search</button>
+</div> -->
+
+<div class="wrap">
+    <div class="search">
+       <input type="text" class="searchTerm" [(ngModel)]="searchTerm" placeholder="Search over 1M recipes">
+       <button type="submit" class="searchButton" (click)="recipeService.getRecipes(searchTerm)">
+         <i class="fa fa-search"></i>
+      </button>
+    </div>
+ </div>
+
+ <div class="circles">
+    <div id="circle-1"></div> 
+    <div id="circle-2"></div>
+    <div id="circle-3"></div>
+</div>
