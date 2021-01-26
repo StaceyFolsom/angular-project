@@ -15,7 +15,6 @@ export class RecipeService {
   appID = "780ebef6";
   url = "https://api.edamam.com/search";
   recipes: shortRecipe[] = [];
-  // searchTerm : string = "";
 
   constructor(private http: HttpClient) {}
 
@@ -23,13 +22,13 @@ export class RecipeService {
 
   getRecipes(searchTerm) {
     const requestURL = this.getUrlWithAPIKey() + "&q=" + searchTerm; // add whatever params you want from https://developer.edamam.com/edamam-docs-recipe-api
-  console.log("Searching for:", searchTerm);
+  console.log("Searching for:", searchTerm); // STACEY won't be needed in the long run
 
     this.http.get(requestURL).subscribe(
       (response: any) => {
         this.recipes = response.hits;
         console.log(this.recipes); // STACEY won't be needed in the long run
-        
+
       },
       (error) => {
         console.error(error);
