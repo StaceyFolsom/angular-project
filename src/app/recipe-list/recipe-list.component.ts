@@ -5,11 +5,11 @@ import { RecipeService } from '../recipe.service'; // STACEY
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.css'],
-  providers: [RecipeService] // STACEY
+  providers: [RecipeService]
 })
 export class RecipeListComponent implements OnInit {
 
-  constructor( public recipeService: RecipeService) { } // STACEY
+  constructor( public recipeService: RecipeService) {} // STACEY
 
   ngOnInit(): void {}
 

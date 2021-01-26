@@ -9,19 +9,10 @@ import { RecipeService } from '../recipe.service';
 })
 export class SearchCriteriaComponent implements OnInit {
   searchTerm: string = "";
-  // url: string = "";
   
   constructor(public recipeService: RecipeService) { }
 
   ngOnInit(): void {
   }
-
-  // searchRecipes() {
-
-    // something like this
-    // return this.todo.filter((todo) => {
-    //   return todo.task.toLowerCase().includes(this.filter.toLowerCase());
-    // })
-  // }
 
 }
