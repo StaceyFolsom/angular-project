@@ -1,5 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Directive, OnInit } from '@angular/core';
 import { RecipeService } from '../recipe.service';
+
+interface Recipe {
+  label: string;
+  image: string;
+  source: string;
+  url: string;
+  yield: number;
+  calories: number;
+};
 
 @Component({
   selector: 'app-search-criteria',
@@ -8,11 +17,18 @@ import { RecipeService } from '../recipe.service';
   providers: [RecipeService]
 })
 export class SearchCriteriaComponent implements OnInit {
-  searchTerm: string = "";
-  
-  constructor(public recipeService: RecipeService) { }
+  public selectedRecipe: Recipe;
+  public recipe: Recipe;
 
-  ngOnInit(): void {
+  searchTerm: string = "";
+
+  
+  constructor(public recipeService: RecipeService) {}
+
+    selectRecipe(recipe: Recipe) {
+      console.log(recipe);
+      this.selectedRecipe = recipe;
   }
 
+  ngOnInit(): void {} 
 }

@@ -1,7 +1,7 @@
-<!-- <div *ngFor="let recipe of recipeList">
-    <h2> {{ recipe.recipe.label }}</h2>
-    <h3> Each serving has {{ recipe.recipe.calories / recipe.recipe.yield }} calories</h3>
-    <p> Servings: {{ recipe.recipe.yield }}</p>
-    <p><a [href]="recipe.recipe.url">View original recipe at {{ recipe.recipe.source }}</a></p>
-    <img [src]="recipe.recipe.image" />
-</div>  -->
+<div class="details" *ngIf="recipe">
+    <h2> {{ recipe.label }}</h2>
+    <h3> Each serving has {{ (recipe.calories / recipe.yield) | number: '1.0-0'}} calories</h3>
+    <p> Servings: {{ recipe.yield }}</p>
+    <p><a [href]="recipe.url">View original recipe at {{ recipe.source }}</a></p>
+    <img [src]="recipe.image" />
+</div> 

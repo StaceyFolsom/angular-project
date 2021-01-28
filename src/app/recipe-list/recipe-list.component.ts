@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RecipeService } from '../recipe.service'; // STACEY
+import { RecipeService } from '../recipe.service';
 
 @Component({
   selector: 'app-recipe-list',
@@ -9,7 +9,7 @@ import { RecipeService } from '../recipe.service'; // STACEY
 })
 export class RecipeListComponent implements OnInit {
 
-  constructor( public recipeService: RecipeService) {} // STACEY
+  constructor( public recipeService: RecipeService) {}
 
   ngOnInit(): void {}
 

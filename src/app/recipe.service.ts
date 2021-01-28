@@ -1,10 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
-interface shortRecipe {
+interface Recipe {
   label: string;
   image: string;
   source: string;
+  url: string;
+  yield: number;
+  calories: number;
 };
 
 @Injectable({
@@ -14,7 +17,8 @@ export class RecipeService {
   apiKey = "481ff5b72289ea4b80c372ff0248e618";
   appID = "780ebef6";
   url = "https://api.edamam.com/search";
-  recipes: shortRecipe[] = [];
+  recipes: Recipe[] = [];
+
 
   constructor(private http: HttpClient) {}
 
@@ -39,5 +43,7 @@ export class RecipeService {
   getUrlWithAPIKey() { // DON'T CHANGE ME
     return `${this.url}?app_id=${this.appID}&app_key=${this.apiKey}`;
   }
+
+  ngOnInit() {}
 
 }
