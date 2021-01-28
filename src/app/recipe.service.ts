@@ -5,6 +5,7 @@ interface Recipe {
   label: string;
   image: string;
   source: string;
+  bookmarked: boolean; // Kim - using for favorites
   url: string;
   yield: number;
   calories: number;
@@ -18,6 +19,7 @@ export class RecipeService {
   appID = "780ebef6";
   url = "https://api.edamam.com/search";
   recipes: Recipe[] = [];
+  favorites: Recipe[] = []; // Kim
 
 
   constructor(private http: HttpClient) {}

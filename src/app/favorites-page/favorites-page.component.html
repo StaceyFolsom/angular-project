@@ -1,1 +1,12 @@
-<p>favorites-page works!</p>
+<!-- Kim start -->
+<h1>My Favorite Recipes</h1>
+<div *ngFor="let favorite of recipeService.favorites; let i = index;">
+    {{favorite.recipe}}
+    <button (click)="removeFavorite(i)"> Remove from Favorites </button>
+    <!-- <h2>{{ recipe.recipe.label }}</h2>
+    <p>Source: {{ recipe.recipe.source }}</p>
+    <button (click)="favorite(recipe)">Add to Favorites</button> Kim
+    <img [src]="recipe.recipe.image" />
+    <button (click)="selectRecipe(recipe.recipe)">View Details</button> -->
+  </div>
+  <!-- Kim end -->

@@ -16,8 +16,20 @@
 <div class="recipes" *ngFor="let recipe of recipeService.recipes">
     <h2>{{ recipe.recipe.label }}</h2>
     <p>Source: {{ recipe.recipe.source }}</p>
+
+    <!-- Kim - start faves button -->
+    <div *ngIf="!recipe.bookmarked; else elseBlock">
+       <button id="add_btn" (click)="addFavorite(recipe)">Add to Favorites</button>
+    </div> 
+    <div>
+      <ng-template #elseBlock>
+       <button id="remove_btn" (click)="removeFavorite(recipe)">Remove from Favorites</button>
+       </ng-template>
+    </div>
+    <!-- Kim - start faves button -->
+
+    <div><button (click)="selectRecipe(recipe.recipe)">View Details</button></div>
     <img [src]="recipe.recipe.image" />
-    <button (click)="selectRecipe(recipe.recipe)">View Details</button>
   </div>
 
   <app-recipe-details [recipe]="selectedRecipe"></app-recipe-details>

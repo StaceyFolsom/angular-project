@@ -5,6 +5,7 @@ interface Recipe {
   label: string;
   image: string;
   source: string;
+  bookmarked: boolean; // Kim - using for favorites
   url: string;
   yield: number;
   calories: number;
@@ -29,6 +30,22 @@ export class SearchCriteriaComponent implements OnInit {
       console.log(recipe);
       this.selectedRecipe = recipe;
   }
+
+  // Kim
+  addFavorite(recipe: Recipe) : void {
+    console.log(recipe);
+    recipe.bookmarked = true;
+    this.recipeService.favorites.push(recipe);
+    console.log(this.recipeService.favorites);
+  }
+  removeFavorite(recipe: Recipe) : void {
+    console.log(recipe);
+    recipe.bookmarked = false;
+    let remove = this.recipeService.favorites.indexOf(recipe);
+    this.recipeService.favorites.splice(remove, 1);
+    console.log(this.recipeService.favorites);
+  }
+  // Kim
 
   ngOnInit(): void {} 
 }
