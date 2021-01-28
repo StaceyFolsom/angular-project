@@ -8,14 +8,14 @@
  </div>
 
  <div class="circles">
-    <div id="circle-1"></div> 
-    <div id="circle-2"></div>
-    <div id="circle-3"></div>
-</div>
+   <div id="circle-1"></div> 
+   <div id="circle-2"></div>
+   <div id="circle-3"></div>
+ </div>
 
 <div class="recipes" *ngFor="let recipe of recipeService.recipes">
     <h2>{{ recipe.recipe.label }}</h2>
     <p>Source: {{ recipe.recipe.source }}</p>
     <img [src]="recipe.recipe.image" />
-  </div>
+</div> 
   

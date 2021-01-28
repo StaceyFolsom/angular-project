@@ -47,35 +47,35 @@ h2 {
 }
 
 #circle-1 { 
-    border-radius: 50%;
-    width: 150px;
-    height: 150px;
-    background-color: rgb(247, 136, 167, 0.6);
-    position: relative;
-    left: 500px;
-    bottom: -200px;
-    }
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  background-color: rgb(247, 136, 167, 0.6);
+  position: relative;
+  left: 500px;
+  bottom: -200px;
+  }
 
 #circle-2 { 
-        border-radius: 50%;
-        width: 150px;
-        height: 150px;
-        background-color: rgb(247, 193, 162, 0.7);
-        position: relative;
-        left: 200px;
-        bottom: -50px;
-    }
+      border-radius: 50%;
+      width: 150px;
+      height: 150px;
+      background-color: rgb(247, 193, 162, 0.7);
+      position: relative;
+      left: 200px;
+      bottom: -50px;
+  }
 
 #circle-3 { 
-        border-radius: 500%;
-        width: 150px;
-        height: 150px;
-        background-color: rgba(180, 21, 16, 0.6);
-        position: relative;
-        left: 800px;
-        bottom: 100px;
-    }
-
+      border-radius: 500%;
+      width: 150px;
+      height: 150px;
+      background-color: rgba(180, 21, 16, 0.6);
+      position: relative;
+      left: 800px;
+      bottom: 100px;
+  }
+  
 .recipes {
     padding: 1rem;
     margin: 1rem;
