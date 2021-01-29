@@ -29,6 +29,7 @@ export class SearchCriteriaComponent implements OnInit {
     this.recipeService.favorites.push(recipe);
     console.log(this.recipeService.favorites);
   }
+
   removeFavorite(recipe: Recipe) : void {
     console.log(recipe);
     recipe.bookmarked = false;

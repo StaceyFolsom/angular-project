@@ -10,9 +10,10 @@ import { Recipe } from '../recipe';
 })
 
 export class FavoritesPageComponent implements OnInit {
-  public recipe: Recipe;
+public recipe: Recipe;
+  // @Input() public recipe: Recipe[];
 
-  constructor( public recipeService: RecipeService) {}  // Kim
+  constructor(public recipeService: RecipeService) {}  // Kim
 
   ngOnInit(): void {
 

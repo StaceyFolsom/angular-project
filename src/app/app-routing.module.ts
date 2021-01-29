@@ -8,15 +8,15 @@ import { SearchCriteriaComponent } from './search-criteria/search-criteria.compo
 const routes: Routes = [
   // //blank path is the default or home//
        { path: '', component: RecipeDetailsComponent },
-       { path: 'RecipeDetails', component: RecipeDetailsComponent },
-       { path: 'RecipeList', component: RecipeListComponent },
-       { path: 'SearchCriteria', component: SearchCriteriaComponent },
-       { path: 'FavoritesPage', component: FavoritesPageComponent}, // Kim
+       { path: 'details', component: RecipeDetailsComponent },
+      //  { path: 'RecipeList', component: RecipeListComponent },
+       { path: 'search', component: SearchCriteriaComponent },
+       { path: 'favorites', component: FavoritesPageComponent}, // Kim
       //  redirects 
-       { path: 'RecipeDetails', redirectTo: '/detail', pathMatch: 'full' },
-       { path: 'RecipeList', redirectTo: '/recipe', pathMatch: 'full' },
-       { path: 'SearchCriteria', redirectTo: '/search', pathMatch: 'full' },
-       { path: 'FavoritesPage', redirectTo: '/search', pathMatch: 'full' }
+      //  { path: 'RecipeDetails', redirectTo: '/detail', pathMatch: 'full' },
+      //  { path: 'RecipeList', redirectTo: '/recipe', pathMatch: 'full' },
+      //  { path: 'SearchCriteria', redirectTo: '/search', pathMatch: 'full' },
+      //  { path: 'FavoritesPage', redirectTo: '/favorites', pathMatch: 'full' }
     //** wildcard -catch all bad routes and redirect them to the not found page */
     // { path: '**', component: PageNotFoundComponent }
     ];

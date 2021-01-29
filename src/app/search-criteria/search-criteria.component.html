@@ -1,3 +1,5 @@
+
+
 <div class="wrap">
     <div class="search">
        <input type="text" class="searchTerm" [(ngModel)]="searchTerm" placeholder="Search over 1M recipes">
@@ -17,7 +19,7 @@
     <h2>{{ recipe.recipe.label }}</h2>
     <p>Source: {{ recipe.recipe.source }}</p>
     <img [src]="recipe.recipe.image" />
-    <button (click)="selectRecipe(recipe.recipe)">View Details</button>
+    <div><button (click)="selectRecipe(recipe.recipe)">View Details</button>
 
           <!-- Kim - start faves button -->
           <div *ngIf="!recipe.bookmarked; else elseBlock">
@@ -27,6 +29,7 @@
            <ng-template #elseBlock>
             <button id="remove_btn" (click)="removeFavorite(recipe)">Remove from Favorites</button>
             </ng-template>
+         </div>
          </div>
          <!-- Kim - start faves button -->
   </div>
