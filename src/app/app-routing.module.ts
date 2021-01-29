@@ -16,7 +16,7 @@ const routes: Routes = [
        { path: 'RecipeDetails', redirectTo: '/detail', pathMatch: 'full' },
        { path: 'RecipeList', redirectTo: '/recipe', pathMatch: 'full' },
        { path: 'SearchCriteria', redirectTo: '/search', pathMatch: 'full' },
-       { path: 'FavoritesPage', redirectTo: '/search', pathMatch: 'full' }
+       { path: 'FavoritesPage', redirectTo: '/favorites', pathMatch: 'full' }
     //** wildcard -catch all bad routes and redirect them to the not found page */
     // { path: '**', component: PageNotFoundComponent }
     ];

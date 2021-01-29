@@ -10,6 +10,7 @@ import { Recipe } from '../recipe';
 })
 
 export class FavoritesPageComponent implements OnInit {
+  // @Input() public recipe: Recipe[]; // Kim
   public recipe: Recipe;
 
   constructor( public recipeService: RecipeService) {}  // Kim

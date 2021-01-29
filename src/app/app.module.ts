@@ -9,6 +9,7 @@ import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { RecipeDetailsComponent } from './recipe-details/recipe-details.componen
     RecipeListComponent,
     SearchCriteriaComponent,
     FavoritesPageComponent,
-    RecipeDetailsComponent
+    RecipeDetailsComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
