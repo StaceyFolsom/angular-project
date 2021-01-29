@@ -1,26 +1,19 @@
-import { Component, OnInit } from '@angular/core';
-// import { RecipeListComponent } from '../recipe-list/recipe-list.component';
-
-// interface detailedRecipe { 
-//   label: string;
-//   image: string;
-//   source: string;
-//   url: string;
-//   yield: number;
-//   calories: number;
-// };
+import { Component, Input, OnInit } from '@angular/core';
+import { SearchCriteriaComponent } from '../search-criteria/search-criteria.component';
+import { RecipeService } from '../recipe.service';
+import { Recipe } from '../recipe';
 
 @Component({
   selector: 'app-recipe-details',
   templateUrl: './recipe-details.component.html',
   styleUrls: ['./recipe-details.component.css'],
-  // providers: [RecipeListComponent]
+  providers: [SearchCriteriaComponent, RecipeService]
 })
 export class RecipeDetailsComponent implements OnInit {
-  
+ @Input() public recipe: Recipe[];
 
-  constructor() {
-  // constructor(public recipeList: RecipeListComponent) {
+
+  constructor(public SearchCriteria: SearchCriteriaComponent) {
   }
 
   ngOnInit() {}

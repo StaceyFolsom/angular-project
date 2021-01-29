@@ -7,10 +7,21 @@
     </div>
  </div>
 
- <div class="circles">
-   <div id="circle-1"></div> 
-   <div id="circle-2"></div>
-   <div id="circle-3"></div>
+ <div class="circles" >
+   <body>
+   <div id="circle-1">
+      <img src="gluten.png">
+   </div>
+   <!-- <input class="filter" type="text" name="filter" [(ngModel)]="filter" placeholder="Health Labels"/>
+      <div *ngFor="let recipe of getFilteredResults(); index as i"> </div>
+            <button class="button-1" (click)="getFilteredResults()" *ngIf="rceipe.labels="{gluten-free}></button>  -->
+   <div id="circle-2">
+      <img src="dairy.png">
+   </div>
+   <div id="circle-3">
+      <img src="nut.png">
+   </div>
+   </body>
  </div>
 
 <div class="recipes" *ngFor="let recipe of recipeService.recipes">

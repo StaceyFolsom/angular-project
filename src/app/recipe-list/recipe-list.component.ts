@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { RecipeService } from '../recipe.service'; // STACEY
+import { Recipe } from '../recipe';
 
 @Component({
   selector: 'app-recipe-list',
   templateUrl: './recipe-list.component.html',
   styleUrls: ['./recipe-list.component.css'],
-  providers: [RecipeService]
+  providers: [RecipeService] // STACEY
 })
 export class RecipeListComponent implements OnInit {
 
