@@ -18,7 +18,20 @@
     <p>Source: {{ recipe.recipe.source }}</p>
     <img [src]="recipe.recipe.image" />
     <button (click)="selectRecipe(recipe.recipe)">View Details</button>
+
+          <!-- Kim - start faves button -->
+          <div *ngIf="!recipe.bookmarked; else elseBlock">
+            <button id="add_btn" (click)="addFavorite(recipe)">Add to Favorites</button>
+         </div> 
+         <div>
+           <ng-template #elseBlock>
+            <button id="remove_btn" (click)="removeFavorite(recipe)">Remove from Favorites</button>
+            </ng-template>
+         </div>
+         <!-- Kim - start faves button -->
   </div>
+
+
 
   <app-recipe-details [recipe]="selectedRecipe"></app-recipe-details>
 

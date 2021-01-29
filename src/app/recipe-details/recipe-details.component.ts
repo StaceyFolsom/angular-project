@@ -1,16 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { SearchCriteriaComponent } from '../search-criteria/search-criteria.component';
 import { RecipeService } from '../recipe.service';
-
-interface Recipe {
-  label: string;
-  image: string;
-  source: string;
-  url: string;
-  yield: number;
-  calories: number;
-};
-
+import { Recipe } from '../recipe';
 
 @Component({
   selector: 'app-recipe-details',
@@ -19,7 +10,7 @@ interface Recipe {
   providers: [SearchCriteriaComponent, RecipeService]
 })
 export class RecipeDetailsComponent implements OnInit {
-  @Input() recipe: Recipe;
+ @Input() public recipe: Recipe[];
 
 
   constructor(public SearchCriteria: SearchCriteriaComponent) {
