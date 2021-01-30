@@ -1,0 +1,18 @@
+<app-navbar></app-navbar>
+<div class="recipes" *ngFor="let recipe of recipeService.recipes; let i = index">
+    <h2>{{ recipe.recipe.label }}</h2>
+    <p>Source: {{ recipe.recipe.source }}</p>
+    <img [src]="recipe.recipe.image" />
+    <div><button (click)="selectRecipe(recipe)" routerLink="/details">View Details</button>
+          <!-- Kim - start faves button -->
+          <div *ngIf="!recipe.recipe.bookmarked; else elseBlock">
+            <button id="add_btn" (click)="addFavorite(recipe.recipe)">Add to Favorites</button>
+         </div> 
+         <div>
+           <ng-template #elseBlock>
+            <button id="remove_btn" (click)="removeFavorite(recipe.recipe)">Remove from Favorites</button>
+            </ng-template>
+         </div>
+         </div>
+         <!-- Kim - start faves button -->
+  </div>

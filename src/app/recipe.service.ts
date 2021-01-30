@@ -1,15 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-interface Recipe {
-  label: string;
-  image: string;
-  source: string;
-  bookmarked: boolean; // Kim - using for favorites
-  url: string;
-  yield: number;
-  calories: number;
-};
+import { Recipe } from './recipe';
 
 @Injectable({
   providedIn: 'root'
@@ -20,6 +11,7 @@ export class RecipeService {
   url = "https://api.edamam.com/search";
   recipes: Recipe[] = [];
   public favorites: Recipe[] = []; // Kim
+  public selection: Recipe[] = [];
 
 
   constructor(private http: HttpClient) {}

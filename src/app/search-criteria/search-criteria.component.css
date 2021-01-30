@@ -1,10 +1,3 @@
-@import url(https://fonts.googleapis.com/css?family=Open+Sans);
-
-h2 {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 20px;
-}
-
 .search {
   width: 100%;
   position: relative;
@@ -46,7 +39,7 @@ h2 {
   transform: translate(-50%, -50%);
 }
 
-#circle-1 { 
+/* #circle-1 { 
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -74,18 +67,6 @@ h2 {
         position: relative;
         left: 800px;
         bottom: 100px;
-    }
+    } */
 
-.recipes {
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 3px;
-    border: 2px solid gray;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: 20px;
-    color: black;
-}
 
-.detailedRecipe {
-    background-color: red;
-}

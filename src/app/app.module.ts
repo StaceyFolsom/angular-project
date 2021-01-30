@@ -10,6 +10,7 @@ import { SearchCriteriaComponent } from './search-criteria/search-criteria.compo
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HomeComponent } from './home/home.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     SearchCriteriaComponent,
     FavoritesPageComponent,
     RecipeDetailsComponent,
-    NavbarComponent
+    NavbarComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,

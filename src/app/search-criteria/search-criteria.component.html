@@ -3,40 +3,22 @@
 <div class="wrap">
     <div class="search">
        <input type="text" class="searchTerm" [(ngModel)]="searchTerm" placeholder="Search over 1M recipes">
-       <button type="submit" class="searchButton" (click)="recipeService.getRecipes(searchTerm)">
+       <button type="submit" class="searchButton" (click)="recipeService.getRecipes(searchTerm)" routerLink="/recipes">
          <i class="fa fa-search"></i>
       </button>
     </div>
  </div>
 
- <div class="circles">
+ <!-- <div class="circles">
     <div id="circle-1"></div> 
     <div id="circle-2"></div>
     <div id="circle-3"></div>
-</div>
-
-<div class="recipes" *ngFor="let recipe of recipeService.recipes">
-    <h2>{{ recipe.recipe.label }}</h2>
-    <p>Source: {{ recipe.recipe.source }}</p>
-    <img [src]="recipe.recipe.image" />
-    <div><button (click)="selectRecipe(recipe.recipe)">View Details</button>
-
-          <!-- Kim - start faves button -->
-          <div *ngIf="!recipe.bookmarked; else elseBlock">
-            <button id="add_btn" (click)="addFavorite(recipe)">Add to Favorites</button>
-         </div> 
-         <div>
-           <ng-template #elseBlock>
-            <button id="remove_btn" (click)="removeFavorite(recipe)">Remove from Favorites</button>
-            </ng-template>
-         </div>
-         </div>
-         <!-- Kim - start faves button -->
-  </div>
+</div> -->
 
 
 
-  <app-recipe-details [recipe]="selectedRecipe"></app-recipe-details>
+
+  
 
   
 

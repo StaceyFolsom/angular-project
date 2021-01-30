@@ -1,15 +1,16 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { FavoritesPageComponent } from './favorites-page/favorites-page.component';  // Kim
+import { HomeComponent } from './home/home.component';
 import { RecipeDetailsComponent } from './recipe-details/recipe-details.component';
 import { RecipeListComponent } from './recipe-list/recipe-list.component';
 import { SearchCriteriaComponent } from './search-criteria/search-criteria.component';
 
 const routes: Routes = [
   // //blank path is the default or home//
-       { path: '', component: RecipeDetailsComponent },
+       { path: '', component: HomeComponent },
        { path: 'details', component: RecipeDetailsComponent },
-      //  { path: 'RecipeList', component: RecipeListComponent },
+       { path: 'recipes', component: RecipeListComponent },
        { path: 'search', component: SearchCriteriaComponent },
        { path: 'favorites', component: FavoritesPageComponent}, // Kim
       //  redirects 
