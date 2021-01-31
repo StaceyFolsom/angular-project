@@ -3,3 +3,13 @@ body{
     font-family: 'Open Sans', sans-serif;
     display: inline;
   }
+  /* @media [screen|print] and (max-width: 992px) {
+    nav {
+      background-color: black;
+    } */
+/* 
+    @media only screen and (min-width: 800px) {
+      img; {
+          width: 400px
+        }
+    } */
