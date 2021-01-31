@@ -21,23 +21,36 @@ export class RecipeService {
   recipes: Recipe[] = [];
   favorites: Recipe[] = []; // Kim
 
-  filter: string = '';
+  // filter: string = '';
 
   constructor(private http: HttpClient) {}
 
 
-  healthLabel(searchTerm) {
-    const excludedItems = this.getUrlWithAPIKey() + "&q=" + searchTerm + "health=gluten-free&health=dairy-free&health=tree-nut-free";
-
-    this.http.get(excludedItems).subscribe(
+  getNutFree() { 
+    const nutFreeRecipes = this.getUrlWithAPIKey() + "&health=tree-nut-free";
+    // "&q=" + "&health=tree-nut-free";
+    this.http.get(nutFreeRecipes).subscribe(
       (response: any) => {
-  };
-  for (const recipe of response.hits) {
-    if (recipe.label === "gluten-free", "dairy-free", "tree-nut-free";)
-    {
-      recipe.push()
-      //push to a new nut free array and display that
-    }
+        // this.recipes = response.hits;
+        console.log(response)
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
+    // const excludedItems = this.getUrlWithAPIKey() + "health=gluten-free&health=dairy-free&health=tree-nut-free";
+
+  //   this.http.get(excludedItems).subscribe(
+  //     (response: any) => {
+  // };
+  // for (const recipe of response.hits) {
+  //   if (recipe.label === "gluten-free", "dairy-free", "tree-nut-free";)
+  //   {
+  //     recipe.push()
+  //     //push to a new nut free array and display that
+  //   };
 
   getRecipes(searchTerm) {
     const requestURL = this.getUrlWithAPIKey() + "&q=" + searchTerm; // add whatever params you want from https://developer.edamam.com/edamam-docs-recipe-api
