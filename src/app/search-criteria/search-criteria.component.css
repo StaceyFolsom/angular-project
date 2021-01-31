@@ -45,6 +45,18 @@
   font-size: 20px;
 }
 
+.health, .feeling-lucky {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0 75px;
+}
+
+.restriction-header, .lucky-header {
+  text-align: center;
+}
+
+
 .diet-restrictions {
   display: flex;
   flex-direction: row;
@@ -55,6 +67,20 @@
 .diet-circle > img {
   height: 150px;
   margin: 0 10px;
+}
+
+.blue-button {
+  background: #00B4CC;
+  text-align: center;
+  line-height: 1.3;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 5px;
+  border: 1px solid #00B4CC;
+  font-size: 11pt;
+  padding: 5px 15px;
+  margin: auto;
+  width: 200px;
 }
 
 /* #circle-1 { 
