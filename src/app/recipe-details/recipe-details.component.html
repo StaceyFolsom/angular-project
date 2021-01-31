@@ -17,19 +17,21 @@
 </section>  -->
 
 <app-navbar></app-navbar>
-<a ng-click="clearSelection()" routerLink="/recipes">Return to search results</a>
+<a id="return" ng-click="clearSelection()" routerLink="/recipes">Return to search results</a>
 <section class="details" *ngFor="let recipe of recipeService.selection">
-    <h2> {{ recipe.label }}</h2>
-    <img [src]="recipe.recipe.image" />
-    <h3> Each serving has {{ (recipe.recipe.calories / recipe.recipe.yield) | number: '1.0-0'}} calories</h3>
-    <p> Servings: {{ recipe.recipe.yield }}</p>
-    <a target="_blank" [href]="recipe.url">View original recipe at {{ recipe.recipe.source }}</a>
-    <div *ngIf="!recipe.bookmarked; else elseBlock">
-            <button id="add_btn" (click)="addFavorite(recipe)">Add to Favorites</button>
-         </div> 
-         <div>
-            <ng-template #elseBlock>
-             <button id="remove_btn" (click)="removeFavorite(recipe)">Remove from Favorites</button>
-             </ng-template>
-          </div>
-</section> 
+   <img [src]="recipe.recipe.image">
+   <div class="info">
+      <h2> {{ recipe.label }}</h2>
+      <h3> Each serving has {{ (recipe.recipe.calories / recipe.recipe.yield) | number: '1.0-0'}} calories</h3>
+      <p> Servings: {{ recipe.recipe.yield }}</p>
+      <a id="view-recipe" target="_blank" [href]="recipe.recipe.url">View original recipe at {{ recipe.recipe.source }}</a>
+      <div *ngIf="!recipe.bookmarked; else elseBlock">
+         <button id="add_btn" (click)="addFavorite(recipe)">Add to Favorites</button>
+      </div> 
+      <div>
+         <ng-template #elseBlock>
+            <button id="remove_btn" (click)="removeFavorite(recipe)">Remove from Favorites</button>
+         </ng-template>
+      </div>
+   </div>
+</section>
