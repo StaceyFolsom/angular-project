@@ -34,6 +34,45 @@ export class RecipeService {
     );
   }
 
+  nutFree() {
+    const requestURL = this.getUrlWithAPIKey() + "&q=" + "&health=peanut-free";
+    this.http.get(requestURL).subscribe(
+      (response: any) => {
+        this.recipes = response.hits;
+        console.log(this.recipes);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
+  noMeat() {
+    const requestURL = this.getUrlWithAPIKey() + "&q=" + "&health=vegetarian";
+    this.http.get(requestURL).subscribe(
+      (response: any) => {
+        this.recipes = response.hits;
+        console.log(this.recipes);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
+  lowSugar() {
+    const requestURL = this.getUrlWithAPIKey() + "&q=" + "&health=sugar-conscious";
+    this.http.get(requestURL).subscribe(
+      (response: any) => {
+        this.recipes = response.hits;
+        console.log(this.recipes);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
   getUrlWithAPIKey() { // DON'T CHANGE ME
     return `${this.url}?app_id=${this.appID}&app_key=${this.apiKey}`;
   }

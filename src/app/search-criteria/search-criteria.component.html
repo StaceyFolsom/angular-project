@@ -1,20 +1,30 @@
-
+<div class="search-wrapper">
 
 <div class="wrap">
+
     <div class="search">
        <input type="text" class="searchTerm" [(ngModel)]="searchTerm" placeholder="Search over 1M recipes">
        <button type="submit" class="searchButton" (click)="recipeService.getRecipes(searchTerm)" routerLink="/recipes">
          <i class="fa fa-search"></i>
       </button>
     </div>
- </div>
 
- <!-- <div class="circles">
-    <div id="circle-1"></div> 
-    <div id="circle-2"></div>
-    <div id="circle-3"></div>
-</div> -->
 
+    <h2 class="restriction-header">Have an allergy or health preference? We've got you covered!</h2>
+
+ <div class="diet-restrictions">
+   <div class="diet-circle">
+      <img src="/assets/nut.png" (click)="recipeService.nutFree()" routerLink="/recipes">
+   </div> 
+   <div class="diet-circle">
+     <img src="/assets/vegetarian.png" (click)="recipeService.noMeat()" routerLink="/recipes">
+   </div>
+   <div class="diet-circle">
+     <img src="/assets/sugar.png" (click)="recipeService.lowSugar()" routerLink="/recipes">
+   </div>
+</div>
+</div>
+</div>
 
 
 
