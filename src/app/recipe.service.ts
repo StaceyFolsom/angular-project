@@ -12,6 +12,18 @@ export class RecipeService {
   recipes: Recipe[] = [];
   public favorites: Recipe[] = []; // Kim
   public selection: Recipe[] = [];
+  randomTerm : string[] = [
+    "chicken",
+    "steak",
+    "tofu",
+    "potato",
+    "cauliflower",
+    "pizza",
+    "bacon",
+    "apple",
+    "orange",
+    "honey"
+  ]
 
 
   constructor(private http: HttpClient) {}
@@ -35,7 +47,7 @@ export class RecipeService {
   }
 
   nutFree() {
-    const requestURL = this.getUrlWithAPIKey() + "&q=" + "&health=peanut-free";
+    const requestURL = this.getUrlWithAPIKey() + "&q=" + "&health=peanut-free" + "&health=tree-nut-free";
     this.http.get(requestURL).subscribe(
       (response: any) => {
         this.recipes = response.hits;
@@ -71,6 +83,23 @@ export class RecipeService {
         console.error(error);
       }
     );
+  }
+
+  getRandom() {
+    let randomNumber: number = Math.floor((Math.random() * 10) + 1);
+    console.log(randomNumber);
+    let searchTerm = this.randomTerm[randomNumber];
+    const requestURL = this.getUrlWithAPIKey() + "&q=" + searchTerm;
+    console.log("Searching for:", searchTerm);
+    this.http.get(requestURL).subscribe(
+      (response: any) => {
+        this.recipes = response.hits;
+        console.log(this.recipes);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );    
   }
 
   getUrlWithAPIKey() { // DON'T CHANGE ME

@@ -8,8 +8,10 @@
          <i class="fa fa-search"></i>
       </button>
     </div>
+</div>
+</div>
 
-
+<div class="health">
     <h2 class="restriction-header">Have an allergy or health preference? We've got you covered!</h2>
 
  <div class="diet-restrictions">
@@ -23,7 +25,13 @@
      <img src="/assets/sugar.png" (click)="recipeService.lowSugar()" routerLink="/recipes">
    </div>
 </div>
-</div>
+
+
+
+<div class="feeling-lucky">
+   <h2 class="lucky-header">Feeling lucky? Click the button for a random recipe idea.</h2>
+   <button class="blue-button" (click)="recipeService.getRandom()" routerLink="/recipes">RUN THE RECIPE RANDOMIZER</button>
+ </div>
 </div>
 
 
