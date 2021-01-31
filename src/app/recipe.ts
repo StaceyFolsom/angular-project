@@ -7,4 +7,5 @@ export interface Recipe {
   url: string;
   yield: number;
   calories: number;
+  ingredients: string[];
 }
