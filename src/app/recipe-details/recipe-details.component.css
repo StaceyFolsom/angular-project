@@ -1,86 +1,69 @@
 
-/* #return {
-    margin-top: 100px;
-} */
+.details-wrap {
+    margin: 25px;
+}
 
-.faves {
+.details {
     display: flex;
-    flex-direction: row;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 3px;
-    border: 2px solid gray;
+    flex-direction: column;
 }
 
 img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
     align-self: center;
-    /* margin-left: 25px; */
-    margin-right: 25px;
     border-radius: 5px;
     border: 5px solid coral;
-    padding: 0;
+    margin-top: 25px;
+}
+
+h3 {
+    margin: 0;
 }
 
 .info {
     display: block;
     justify-content: left;
-    /* margin-left: 10px; */
+    margin: 5px 0;
+}
+
+.add-remove, .fave-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #add_btn, #remove_btn {
     display: block;
-    width: 220px;
+    width: 240px;
     height: 30px;
-    margin-top: 15px;
+    margin-top: 25px;
     color: white;
     background-color: coral;
-    font-size: 1rem;
-    font-weight: bold;
+    font-size: 11pt;
+    font-weight: 600;
     cursor: pointer;
     border-radius: 5px;
 }
 
 @media only screen and (min-width: 768px) {
-    .faves {
+
+    .details {
         display: flex;
         flex-direction: row;
-        padding: 1rem;
-        margin: 1rem;
-        border-radius: 3px;
-        border: 2px solid gray;
     }
-    
+
     img {
-        width: auto;
-        max-width: 100%;
-        height: auto;
-        align-self: center;
-        /* margin-left: 25px; */
-        margin-right: 25px;
-        border-radius: 5px;
-        border: 5px solid coral;
-        padding: 0;
+        align-self: flex-start;
     }
-    
+
     .info {
-        display: block;
-        justify-content: left;
-        /* margin-left: 10px; */
+        margin: 5px 0 0 25px; 
     }
-    
-    #add_btn, #remove_btn {
+
+    .fave-buttons {
         display: block;
-        width: 220px;
-        height: 30px;
-        margin-top: 15px;
-        color: white;
-        background-color: coral;
-        font-size: 1rem;
-        font-weight: bold;
-        cursor: pointer;
-        border-radius: 5px;
-    }
+        position: absolute;
+        left: 65px;
+        top: 500px;
+      }
+
 }

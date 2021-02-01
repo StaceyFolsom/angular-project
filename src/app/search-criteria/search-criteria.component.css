@@ -49,19 +49,13 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 50px;
+  margin: 0 25px;
 }
 
-.restriction-header {
+.restriction-header, .lucky-header {
   text-align: center;
-  font-size: 18px;
+  font-size: 16pt;
 }
-
-.lucky-header {
-  text-align: center;
-  font-size: 18px;
-}
-
 
 .diet-restrictions {
   display: flex;
@@ -87,15 +81,24 @@
   padding: 5px 15px;
   margin: auto;
   width: 200px;
+  cursor: pointer;
 }
 
-.recipe {
-  width: auto;
-  max-width: 100%;
-  height: auto;
-}
+    @media only screen and (min-width: 768px) {
+      
+      .health, .feeling-lucky {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 75px;
+      }
+    
+      }
 
-/* #circle-1 { 
+
+/* Moving unused code to bottom - delete if not needed */
+
+    /* #circle-1 { 
     border-radius: 50%;
     width: 150px;
     height: 150px;
@@ -124,19 +127,3 @@
         left: 800px;
         bottom: 100px;
     } */
-
-    @media only screen and (min-width: 768px) {
-      
-      .health, .feeling-lucky {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        margin: 0 75px;
-      }
-      
-      .restriction-header, .lucky-header {
-        text-align: center;
-      }
-      
-
-    }

@@ -1,80 +1,64 @@
 .faves {
-    display: flex;
-    flex-direction: row;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 3px;
-    border: 2px solid gray;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  border: 2px solid gray;
+  width: auto;
 }
 
 img {
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    align-self: center;
-    /* margin-left: 25px; */
-    margin-right: 25px;
-    border-radius: 5px;
-    border: 5px solid coral;
-    padding: 0;
+  max-width: 400px;
+  border-radius: 5px;
+  border: 5px solid coral;
+  align-self: center;
 }
 
 .info {
-    display: block;
-    justify-content: left;
-    /* margin-left: 10px; */
+  display: block;
+  justify-content: left;
+  /* margin-left: 10px; */
 }
 
-#add_btn, #remove_btn {
-    display: block;
-    width: 220px;
-    height: 30px;
-    margin-top: 15px;
-    color: white;
-    background-color: coral;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
+#add_btn,
+#remove_btn {
+  display: block;
+  width: 240px;
+  height: 30px;
+  margin-top: 25px;
+  color: white;
+  background-color: coral;
+  font-size: 11pt;
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+.remove-button {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
 }
 
 @media only screen and (min-width: 768px) {
-
-.faves {
+  .faves {
     display: flex;
     flex-direction: row;
-    padding: 1rem;
-    margin: 1rem;
-    border-radius: 3px;
-    border: 2px solid gray;
-}
+  }
 
-img {
-    max-width: 400px;
-    align-self: center;
-    /* margin-left: 25px; */
-    margin-right: 25px;
-    border-radius: 5px;
-    border: 5px solid coral;
-    padding: 0;
-}
+  .info {
+    flex-wrap: wrap;
+    margin-left: 15px;
+  }
+  
+  img {
+    align-self: flex-start;
+  }
 
-.info {
-    display: block;
-    justify-content: left;
-    /* margin-left: 10px; */
-}
-
-#add_btn, #remove_btn {
-    display: block;
-    width: 220px;
-    height: 30px;
-    margin-top: 15px;
-    color: white;
-    background-color: coral;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    border-radius: 5px;
-}
 }
