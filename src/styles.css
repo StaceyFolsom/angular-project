@@ -1,5 +1,70 @@
-body{
+body {
     /* background: #f2f2f2; */
     font-family: 'Open Sans', sans-serif;
     display: inline;
   }
+
+h1 {
+    color: coral;
+    font-size: 20pt;
+    margin: 20px 0;
+}
+
+h2 {
+    color: rgb(99, 98, 98);
+    margin-bottom: 10px;
+    font-size: 16pt;
+}
+
+h3 {
+  color: coral;
+}
+
+p {
+    font-size: 12pt;
+    line-height: 1.4;
+}
+
+footer {
+  display: flex;
+  margin-top: 25px;
+  justify-content: center;
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    /* background: #f2f2f2; */
+    font-family: 'Open Sans', sans-serif;
+    display: inline;
+    border: 20px;
+    border-color: gray;
+    margin: auto;
+  }
+
+h1 {
+    color: coral;
+    font-size: 30pt;
+    margin: 25px 0;
+}
+
+h2 {
+    color: rgb(99, 98, 98);
+    margin-bottom: 10px;
+    font-size: 18pt;
+}
+
+h3 {
+  color: coral;
+}
+
+p {
+    font-size: 12pt;
+    line-height: 1.4;
+}
+
+footer {
+  display: flex;
+  margin-top: 25px;
+  justify-content: center;
+}
+}

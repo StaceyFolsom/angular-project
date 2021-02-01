@@ -1,15 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-
-interface Recipe {
-  label: string;
-  image: string;
-  source: string;
-  bookmarked: boolean; // Kim - using for favorites
-  url: string;
-  yield: number;
-  calories: number;
-};
+import { Recipe } from './recipe';
 
 @Injectable({
   providedIn: 'root'
@@ -19,26 +10,39 @@ export class RecipeService {
   appID = "780ebef6";
   url = "https://api.edamam.com/search";
   recipes: Recipe[] = [];
-  favorites: Recipe[] = []; // Kim
+  public favorites: Recipe[] = []; // Kim
+  public selection: Recipe[] = [];
+  randomTerm : string[] = [
+    "chicken",
+    "steak",
+    "tofu",
+    "potato",
+    "cauliflower",
+    "pizza",
+    "bacon",
+    "apple",
+    "orange",
+    "honey"
+  ]
 
   // filter: string = '';
 
   constructor(private http: HttpClient) {}
 
 
-  getNutFree() { 
-    const nutFreeRecipes = this.getUrlWithAPIKey() + "&health=tree-nut-free";
-    // "&q=" + "&health=tree-nut-free";
-    this.http.get(nutFreeRecipes).subscribe(
-      (response: any) => {
-        // this.recipes = response.hits;
-        console.log(response)
-      },
-      (error) => {
-        console.error(error);
-      }
-    );
-  }
+  // getNutFree() { 
+  //   const nutFreeRecipes = this.getUrlWithAPIKey() + "&q=" + "&health=tree-nut-free";
+  //   // "&q=" + "&health=tree-nut-free";
+  //   this.http.get(nutFreeRecipes).subscribe(
+  //     (response: any) => {
+  //       // this.recipes = response.hits;
+  //       console.log(response)
+  //     },
+  //     (error) => {
+  //       console.error(error);
+  //     }
+  //   );
+  // }
 
     // const excludedItems = this.getUrlWithAPIKey() + "health=gluten-free&health=dairy-free&health=tree-nut-free";
 
@@ -66,6 +70,62 @@ export class RecipeService {
         console.error(error);
       }
     );
+  }
+
+  nutFree() {
+    const requestURL = this.getUrlWithAPIKey() + "&q=" + "&health=peanut-free" + "&health=tree-nut-free";
+    this.http.get(requestURL).subscribe(
+      (response: any) => {
+        this.recipes = response.hits;
+        console.log(this.recipes);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
+  noMeat() {
+    const requestURL = this.getUrlWithAPIKey() + "&q=" + "&health=vegetarian";
+    this.http.get(requestURL).subscribe(
+      (response: any) => {
+        this.recipes = response.hits;
+        console.log(this.recipes);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
+  lowSugar() {
+    const requestURL = this.getUrlWithAPIKey() + "&q=" + "&health=sugar-conscious";
+    this.http.get(requestURL).subscribe(
+      (response: any) => {
+        this.recipes = response.hits;
+        console.log(this.recipes);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );
+  }
+
+  getRandom() {
+    let randomNumber: number = Math.floor((Math.random() * 10) + 1);
+    console.log(randomNumber);
+    let searchTerm = this.randomTerm[randomNumber];
+    const requestURL = this.getUrlWithAPIKey() + "&q=" + searchTerm;
+    console.log("Searching for:", searchTerm);
+    this.http.get(requestURL).subscribe(
+      (response: any) => {
+        this.recipes = response.hits;
+        console.log(this.recipes);
+      },
+      (error) => {
+        console.error(error);
+      }
+    );    
   }
 
   getUrlWithAPIKey() { // DON'T CHANGE ME

@@ -1,12 +1,14 @@
+<app-navbar></app-navbar>
 <!-- Kim start -->
 <h1>My Favorite Recipes</h1>
-<div *ngFor="let favorite of recipeService.favorites; let i = index;">
-    {{favorite.recipe}}
-    <button (click)="removeFavorite(i)"> Remove from Favorites </button>
-    <!-- <h2>{{ recipe.recipe.label }}</h2>
-    <p>Source: {{ recipe.recipe.source }}</p>
-    <button (click)="favorite(recipe)">Add to Favorites</button> Kim
-    <img [src]="recipe.recipe.image" />
-    <button (click)="selectRecipe(recipe.recipe)">View Details</button> -->
+<div class="faves" *ngFor="let favorite of recipeService.favorites; let i = index;">
+  <img [src]="favorite.image">
+  <div class="info">
+    <h2>{{ favorite.label }}</h2>
+    <h3> Each serving has {{ (favorite.calories / favorite.yield) | number: '1.0-0'}} calories</h3>
+    <p> Servings: {{ favorite.yield }}</p>
+    <a id="view-recipe" target="_blank" [href]="favorite.url">View original recipe at {{ favorite.source }}</a>
+    <button id="remove_btn" (click)="removeFavorite(favorite)">Remove from Favorites</button>
   </div>
-  <!-- Kim end -->
+</div>
+<!-- Kim end -->
