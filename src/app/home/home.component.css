@@ -2,28 +2,19 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 75px;
-}
-
-h1 {
-    text-align: center;
-    text-emphasis: 10em;
+    margin: 0 25px;
 }
 
 h2 {
     text-align: center;
-    font-size: 18px;
-}
-
-p {
-    text-align: justify;
+    font-size: 16pt;
 }
 
 @media only screen and (min-width: 768px) {
     .intro {
-        display: flex;
+        /* display: flex;
         flex-direction: column;
-        align-items: center;
+        align-items: center; */
         margin: 0 75px;
     }
 }

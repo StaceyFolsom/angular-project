@@ -1,25 +1,25 @@
 <app-navbar></app-navbar>
 <div class="list">
-<div class="recipes" *ngFor="let recipe of recipeService.recipes; let i = index">
-  <div class="label-source">
-    <h2>{{ recipe.recipe.label }}</h2> <br>
-    <div id="source">Source: {{ recipe.recipe.source }}</div>
-  </div>  
-
-  <img [src]="recipe.recipe.image">
-
-  <div class="btn-group">
-    <div><button (click)="selectRecipe(recipe)" routerLink="/details">View Details</button></div>
-    <!-- Kim - start faves button -->
-    <div *ngIf="!recipe.recipe.bookmarked; else elseBlock">
-      <button id="add_btn" (click)="addFavorite(recipe.recipe)">Add to Favorites</button>
-    </div> 
-    <div>
-      <ng-template #elseBlock>
-        <button id="remove_btn" (click)="removeFavorite(recipe.recipe)">Remove from Favorites</button>
-      </ng-template>
-    </div>        
-    <!-- Kim - end faves button -->  
+  <div class="recipes" *ngFor="let recipe of recipeService.recipes; let i = index">
+    <div class="label-source">
+      <h2>{{ recipe.recipe.label }}</h2>
+      <div id="source">Source: {{ recipe.recipe.source }}</div>
+    </div>
+    <img [src]="recipe.recipe.image" />
+    <div class="btn-group">
+      <div>
+        <button (click)="selectRecipe(recipe)" routerLink="/details">VIEW DETAILS</button>
+      </div>
+      <!-- Kim - start faves button -->
+      <div *ngIf="!recipe.recipe.bookmarked; else elseBlock">
+        <button id="add_btn" (click)="addFavorite(recipe.recipe)">ADD TO FAVORITES</button>
+      </div>
+      <div>
+        <ng-template #elseBlock>
+          <button id="remove_btn" (click)="removeFavorite(recipe.recipe)">REMOVE FROM FAVORITES</button>
+        </ng-template>
+      </div>
+      <!-- Kim - end faves button -->
+    </div>
   </div>
-</div>
 </div>
