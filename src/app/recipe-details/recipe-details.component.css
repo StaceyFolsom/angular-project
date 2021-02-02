@@ -52,6 +52,7 @@ h3 {
     }
 
     img {
+        justify-self: left;
         align-self: flex-start;
     }
 
@@ -62,7 +63,7 @@ h3 {
     .fave-buttons {
         display: block;
         position: absolute;
-        left: 65px;
+        left: 25px;
         top: 500px;
       }
 

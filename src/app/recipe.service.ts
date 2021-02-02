@@ -15,14 +15,14 @@ export class RecipeService {
   randomTerm : string[] = [
     "chicken",
     "steak",
-    "tofu",
+    "sushi",
     "potato",
     "cauliflower",
     "pizza",
     "bacon",
     "apple",
     "orange",
-    "honey"
+    "carrot"
   ]
 
   // filter: string = '';
@@ -30,31 +30,7 @@ export class RecipeService {
   constructor(private http: HttpClient) {}
 
 
-  // getNutFree() { 
-  //   const nutFreeRecipes = this.getUrlWithAPIKey() + "&q=" + "&health=tree-nut-free";
-  //   // "&q=" + "&health=tree-nut-free";
-  //   this.http.get(nutFreeRecipes).subscribe(
-  //     (response: any) => {
-  //       // this.recipes = response.hits;
-  //       console.log(response)
-  //     },
-  //     (error) => {
-  //       console.error(error);
-  //     }
-  //   );
-  // }
-
-    // const excludedItems = this.getUrlWithAPIKey() + "health=gluten-free&health=dairy-free&health=tree-nut-free";
-
-  //   this.http.get(excludedItems).subscribe(
-  //     (response: any) => {
-  // };
-  // for (const recipe of response.hits) {
-  //   if (recipe.label === "gluten-free", "dairy-free", "tree-nut-free";)
-  //   {
-  //     recipe.push()
-  //     //push to a new nut free array and display that
-  //   };
+  
 
   getRecipes(searchTerm) {
     const requestURL = this.getUrlWithAPIKey() + "&q=" + searchTerm; // add whatever params you want from https://developer.edamam.com/edamam-docs-recipe-api
@@ -73,7 +49,7 @@ export class RecipeService {
   }
 
   nutFree() {
-    const requestURL = this.getUrlWithAPIKey() + "&q=" + "&health=peanut-free" + "&health=tree-nut-free";
+    const requestURL = this.getUrlWithAPIKey() + "&q=e" + "&health=peanut-free" + "&health=tree-nut-free";
     this.http.get(requestURL).subscribe(
       (response: any) => {
         this.recipes = response.hits;
@@ -86,7 +62,7 @@ export class RecipeService {
   }
 
   noMeat() {
-    const requestURL = this.getUrlWithAPIKey() + "&q=" + "&health=vegetarian";
+    const requestURL = this.getUrlWithAPIKey() + "&q=b" + "&health=vegetarian";
     this.http.get(requestURL).subscribe(
       (response: any) => {
         this.recipes = response.hits;
@@ -99,7 +75,7 @@ export class RecipeService {
   }
 
   lowSugar() {
-    const requestURL = this.getUrlWithAPIKey() + "&q=" + "&health=sugar-conscious";
+    const requestURL = this.getUrlWithAPIKey() + "&q=l" + "&health=sugar-conscious";
     this.http.get(requestURL).subscribe(
       (response: any) => {
         this.recipes = response.hits;
@@ -135,3 +111,32 @@ export class RecipeService {
   ngOnInit() {}
 
 }
+
+
+
+
+// getNutFree() { 
+  //   const nutFreeRecipes = this.getUrlWithAPIKey() + "&q=" + "&health=tree-nut-free";
+  //   // "&q=" + "&health=tree-nut-free";
+  //   this.http.get(nutFreeRecipes).subscribe(
+  //     (response: any) => {
+  //       // this.recipes = response.hits;
+  //       console.log(response)
+  //     },
+  //     (error) => {
+  //       console.error(error);
+  //     }
+  //   );
+  // }
+
+    // const excludedItems = this.getUrlWithAPIKey() + "health=gluten-free&health=dairy-free&health=tree-nut-free";
+
+  //   this.http.get(excludedItems).subscribe(
+  //     (response: any) => {
+  // };
+  // for (const recipe of response.hits) {
+  //   if (recipe.label === "gluten-free", "dairy-free", "tree-nut-free";)
+  //   {
+  //     recipe.push()
+  //     //push to a new nut free array and display that
+  //   };

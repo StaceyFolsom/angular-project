@@ -20,10 +20,16 @@ export class RecipeListComponent extends SearchCriteriaComponent {
   }
 
   selectRecipe(recipe: Recipe) : void {
-    console.log(recipe);
-    // recipe.selected = true;
+    recipe.selected = true;
     this.recipeService.selection.push(recipe);
     this.selectedRecipe = recipe;
+    console.log(this.recipeService.selection);
+}
+
+clearSelection(recipe: Recipe) : void {
+  recipe.selected = false;
+  let remove = this.recipeService.selection.indexOf(recipe);
+  this.recipeService.selection.splice(remove, 1);
 }
 
     // selectRecipe(recipe: Recipe) : void {

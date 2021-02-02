@@ -28,6 +28,7 @@ img {
   border-radius: 5px;
   border: 5px solid coral;
   align-self: center;
+  padding: 0;
 }
 
 .btn-group {

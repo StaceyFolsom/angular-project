@@ -67,6 +67,7 @@
 .diet-circle > img {
   height: 150px;
   margin: 0 10px;
+  cursor: pointer;
 }
 
 .blue-button {
