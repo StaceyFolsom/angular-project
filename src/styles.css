@@ -27,6 +27,10 @@ p {
     line-height: 1.4;
 }
 
+img {
+  padding: 0;
+}
+
 footer {
   display: flex;
   margin-top: 25px;
@@ -34,6 +38,7 @@ footer {
 }
 
 #edamam-badge {
+  cursor: pointer;
   margin-top: 10px;
 }
 

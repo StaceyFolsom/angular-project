@@ -8,11 +8,16 @@
   width: auto;
 }
 
+a {
+    margin-left: 25px;
+}
+
 img {
   max-width: 400px;
   border-radius: 5px;
   border: 5px solid coral;
   align-self: center;
+  padding: 0;
 }
 
 .info {
@@ -21,7 +26,6 @@ img {
   /* margin-left: 10px; */
 }
 
-#add_btn,
 #remove_btn {
   display: block;
   width: 240px;
@@ -40,12 +44,6 @@ img {
     justify-content: center;
 }
 
-.remove-button {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-}
-
 @media only screen and (min-width: 768px) {
   .faves {
     display: flex;
@@ -55,10 +53,28 @@ img {
   .info {
     flex-wrap: wrap;
     margin-left: 15px;
+    margin-bottom: 25px;
   }
   
   img {
     align-self: flex-start;
+    padding: 0;
   }
+
+.button {
+    order: 3;
+    display: block;
+    position: absolute;
+    right: 25px;
+    margin-top: -5px;
+}
+
+  #remove_btn {
+    display: block;
+    position: absolute;
+    /* right: 250; */
+    right: 0px;
+    margin-top: -5px;
+}
 
 }

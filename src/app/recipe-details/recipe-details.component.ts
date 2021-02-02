@@ -13,19 +13,19 @@ export class RecipeDetailsComponent extends SearchCriteriaComponent {
  @Input() public recipe: Recipe;
  @Input() public selectedRecipe: Recipe;
  @Input() public favorites: [];
- @Input() public selection: Recipe[];
+ @Input() public selection: [];
 
 
   constructor(public recipeService: RecipeService) {
     super(recipeService);
   }
 
-  clearSelection() : void {
-    this.recipeService.selection.pop();
+  clearSelection(recipe: Recipe) : void {
+    let remove = this.recipeService.selection.indexOf(recipe);
+    this.recipeService.selection.splice(remove, 1);
   }
 
   addFavorite(recipe: Recipe) : void {
-    console.log(recipe);
     recipe.bookmarked = true;
     this.recipeService.favorites.push(recipe);
     console.log(this.recipeService.favorites);

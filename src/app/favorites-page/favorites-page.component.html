@@ -1,12 +1,13 @@
 <app-navbar></app-navbar>
 <!-- Kim start -->
 <h1>My Favorite Recipes</h1>
+<a id="return" routerLink="/recipes">Return to search results</a>
 <div class="faves" *ngFor="let favorite of recipeService.favorites; let i = index;">
   <img [src]="favorite.image">
   <div class="info">
     <h2> {{ favorite.label }}</h2>
-    <h3> Servings: </h3>
-    <p> {{ favorite.yield }} ( {{ (favorite.calories / favorite.yield) | number: '1.0-0'}} calories per serving)</p>
+    <h3> Servings: {{ favorite.yield }} </h3>
+    <p>  {{ (favorite.calories / favorite.yield) | number: '1.0-0'}} calories per serving</p>
     <div class="ingredients">
       <h3>What you'll need:</h3>
     <ul *ngFor="let ingredient of favorite.ingredients">
